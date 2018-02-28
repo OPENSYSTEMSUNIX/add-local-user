@@ -1,0 +1,6 @@
+---
+  user: 'user'
+  comment: ''
+  opt-group: 'opt-group'
+  sudoers_cfg_file: /etc/sudoers
+  sudoers_dropin_dir: /etc/sudoers.d
