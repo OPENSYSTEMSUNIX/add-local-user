@@ -1,3 +1,0 @@
----
-  - name: chown
-    shell: chown -R '{{ user }}':'{{ opt-group }}' /home/nessxsvc
