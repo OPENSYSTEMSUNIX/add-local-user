@@ -10,4 +10,5 @@ Add the nessxsvc user
 | `opt-group:` | opt-group |
 | `sudoers_cfg_file:` | /etc/sudoers|
 | `sudoers_dropin_dir:` | /etc/sudoers.d |
+| `sshkey:` | the ssh public key to copy in place |
 

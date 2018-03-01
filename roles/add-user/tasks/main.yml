@@ -5,24 +5,23 @@
       state: present
 
   - name: check if group exists
-    shell: cat /etc/group | awk -F":" '{print $1}'
+    shell: grep -q '{{optgroup}}' /etc/group
+    ignore_errors: True
     register: etc_groups
 
   - name: add secondary groups to user
     user: 
       name: '{{user}}' 
-      groups: '{{opt-group}}'
+      groups: '{{optgroup}}'
       append: yes
-    when: '"{{opt-group}}" in etc_groups.stdout_lines'
+    when: etc_groups.rc == 0
     notify: chown
 
   - name: copy ssh key
     authorized_key:
       user: '{{user}}'
       state: present
-      key: '{{item}}'
-    with_file:
-      - nessxsvc
+      key: '{{sshkey}}'
 
   - name: ensure sudoers dropin exists
     file:
