@@ -2,6 +2,7 @@
     user: 
       name: '{{user}}'
       comment: '{{comment}}'
+      uid: '{{uid}}'
       state: present
 
   - name: check if group exists
